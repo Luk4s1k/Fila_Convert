@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811E773224000D6D00665E0E /* fileconverting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 811E773024000D6D00665E0E /* fileconverting.cpp */; };
 		81B582E823E8FC8900C3B53B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 81B582E723E8FC8900C3B53B /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,8 +24,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		811E773024000D6D00665E0E /* fileconverting.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fileconverting.cpp; sourceTree = "<group>"; };
+		811E773124000D6D00665E0E /* fileconverting.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = fileconverting.hpp; sourceTree = "<group>"; };
 		81B582E423E8FC8900C3B53B /* Fila_Convert */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Fila_Convert; sourceTree = BUILT_PRODUCTS_DIR; };
 		81B582E723E8FC8900C3B53B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		81BE35D323FB584A001DA9C3 /* input.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
+		81BE35D423FB5859001DA9C3 /* tmp.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = tmp.txt; sourceTree = "<group>"; };
+		81BE35D523FC3D63001DA9C3 /* Word.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Word.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,9 @@
 		81B582DB23E8FC8900C3B53B = {
 			isa = PBXGroup;
 			children = (
+				81BE35D523FC3D63001DA9C3 /* Word.txt */,
+				81BE35D323FB584A001DA9C3 /* input.txt */,
+				81BE35D423FB5859001DA9C3 /* tmp.txt */,
 				81B582E623E8FC8900C3B53B /* Fila_Convert */,
 				81B582E523E8FC8900C3B53B /* Products */,
 			);
@@ -58,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				81B582E723E8FC8900C3B53B /* main.cpp */,
+				811E773024000D6D00665E0E /* fileconverting.cpp */,
+				811E773124000D6D00665E0E /* fileconverting.hpp */,
 			);
 			path = Fila_Convert;
 			sourceTree = "<group>";
@@ -119,6 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				811E773224000D6D00665E0E /* fileconverting.cpp in Sources */,
 				81B582E823E8FC8900C3B53B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

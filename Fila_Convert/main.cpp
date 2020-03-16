@@ -6,10 +6,19 @@
 //  Copyright © 2020 Luca Mitrović. All rights reserved.
 //
 
-#include <iostream>
+// replace readFile with readfile
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+
+#include "fileconverting.hpp"
+
+ 
+
+
+int main() {
+    ScryptFile parsedfile("input.txt","Word.txt");
+    parsedfile.makeparsedFile();
+    parsedfile.removeBasicWordsFromFile();
+    parsedfile.makeNonSortedHashOfWords();
+    
     return 0;
 }
