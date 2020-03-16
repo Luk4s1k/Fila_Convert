@@ -19,6 +19,7 @@ int main() {
     parsedfile.makeparsedFile();
     parsedfile.removeBasicWordsFromFile();
     parsedfile.makeNonSortedHashOfWords();
+    parsedfile.createSignalWords(10);
     
     return 0;
 }

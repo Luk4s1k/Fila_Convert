@@ -181,6 +181,21 @@ void ScryptFile::makeNonSortedHashOfWords(){
     }
 }
 
+static bool value_comparer(StrIntMap::value_type &it1, StrIntMap::value_type &it2)
+{
+return it1.second < it2.second;
+}
+
+void ScryptFile::createSignalWords(int positions){
+    
+    for (int i = 1; i < positions ; i++){
+        StrIntMap::iterator it = std::max_element(map.begin(), map.end(),
+        value_comparer);
+        signalWords.push_back(it->first);
+        map.erase(it);
+    }
+}
+
 //void ScryptFile::addWordtoList(std::string word){
 //    std::ofstream inputFile (this->filename, std::ofstream::out);
 //    inputFile << word;

@@ -27,11 +27,13 @@ public:
     std::string basicWordsListFile;
     std::vector<std::string> words;
     StrIntMap map;
+    std::vector<std::string> signalWords;
     
+    
+public:
     ScryptFile(std::string filename);
     ScryptFile(std::string filename,std::string basicWordsListFile);
 
-public:
     void rewriteFile();
     void toAlphabetical();
     void removeSpaces();
@@ -44,6 +46,7 @@ public:
     void makeparsedFile();
     
     void makeNonSortedHashOfWords();
+    void createSignalWords(int positions);
 
 //  void addWordtoList(std::string word);
 };
