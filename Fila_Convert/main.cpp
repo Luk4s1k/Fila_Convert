@@ -10,11 +10,20 @@
 
 
 #include "fileconverting.hpp"
+//#include "Interval.hpp"
 
  
 
 
 int main() {
+    ScryptFile intervalfile("inteval.txt","Word.txt");
+    intervalfile.removeNumeration();
+    
+    intervalfile.toAlphabeticalInterval();
+    intervalfile.splitFileintoWords();
+    intervalfile.removePaddings();
+    intervalfile.removeBasicWordsFromFile();
+    intervalfile.toIntrervatFormatFile();
     ScryptFile parsedfile("input.txt","Word.txt");
     parsedfile.makeparsedFile();
     parsedfile.removeBasicWordsFromFile();

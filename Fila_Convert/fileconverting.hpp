@@ -16,7 +16,7 @@
 #include <map>
 #include <string>
 
-
+typedef std::map<std::string,std::vector<std::string>> IntervalMap;
 typedef std::map<std::string, int> StrIntMap;
 typedef std::function<bool(std::pair<std::string, int>, std::pair<std::string, int>)> Comparator;
 
@@ -27,10 +27,12 @@ public:
     std::string basicWordsListFile;
     std::vector<std::string> words;
     StrIntMap map;
+    IntervalMap intervalmap;
     std::vector<std::string> signalWords;
     
     
 public:
+    //ScryptFile();
     ScryptFile(std::string filename);
     ScryptFile(std::string filename,std::string basicWordsListFile);
 
@@ -42,13 +44,16 @@ public:
     void removeUnwantedWord(std::string Word);
     void splitFileintoWords();
     void removeBasicWordsFromFile();
-    
+    void toAlphabeticalInterval();
     void makeparsedFile();
+    
+    void toIntrervatFormatFile();
+    void makeIntervalmap();
     
     void makeNonSortedHashOfWords();
     void createSignalWords(int positions);
 
-//  void addWordtoList(std::string word);
+//  void addsignalWord(std::string word);
 };
 
 

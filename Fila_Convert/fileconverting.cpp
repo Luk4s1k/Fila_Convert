@@ -90,6 +90,27 @@ void ScryptFile::toAlphabetical(){
     rewriteFile();
 }
 
+void ScryptFile::toAlphabeticalInterval(){
+    std::ifstream readFile (this->filename, std::ifstream::in);
+    std::ofstream tmpFile ("tmp.txt", std::ofstream::out);
+
+    std::string str;
+    while(readFile){
+        getline(readFile,str);
+        for(int i = 0; i < str.size(); ++i)
+        {
+            if (!((str[i] >= 'a' && str[i]<='z') || (str[i] >= 'A' && str[i]<='Z') || (str[i] == ':') || (str[i] >= '0' && str[i]<='9') )){
+                str[i] = ' ';
+            }
+        }
+        tmpFile << str;
+        tmpFile << std::endl;
+    }
+    
+    readFile.close();
+    tmpFile.close();
+    rewriteFile();
+}
 void ScryptFile::removePaddings()
 {
     std::ifstream readFile(this->filename, std::ifstream::in);
@@ -196,9 +217,43 @@ void ScryptFile::createSignalWords(int positions){
     }
 }
 
-//void ScryptFile::addWordtoList(std::string word){
-//    std::ofstream inputFile (this->filename, std::ofstream::out);
-//    inputFile << word;
-//    inputFile.close();
+void ScryptFile::toIntrervatFormatFile(){
+    std::ifstream readFile(this->filename ,std::ifstream::in);
+    std::ofstream tmpFile("tmp.txt", std::ofstream::out);
+    std::string str;
+    while(readFile){
+        std::getline(readFile, str);
+        if(str[0] == '0'){
+            
+            std::getline(readFile, str);
+            std::getline(readFile, str);
+            
+            tmpFile << str;
+            tmpFile << std::endl;
+            std::getline(readFile, str);
+        }
+        else {
+            tmpFile << str;
+            tmpFile << std::endl;}
+    }
+    readFile.close();
+    tmpFile.close();
+    rewriteFile();
+}
+
+
+void ScryptFile::makeIntervalmap(){
+    std::ifstream readFile(this->filename ,std::ifstream::in);
+    std::string str;
+    while(readFile){
+        std::getline(readFile, str);
+        if(str[0] == '0'){
+            intervalmap[str];
+        }
+        else{}
+    }
+}
+
+// void addSignalWord(std::string word){
+//     
 //}
-//
